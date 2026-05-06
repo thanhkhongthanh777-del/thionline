@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiếng Việt 3 - Đọc hiểu cuối năm</title>
+<style>
+:root{--bg1:#f7fbff;--bg2:#eef6ff;--line:#dbe8f6;--text:#1f3852;--muted:#64748b;--primary:#4f8cff;--primary-dark:#2f6fe4;--success:#16a34a;--danger:#ef4444;--soft-blue:#edf5ff;--soft-yellow:#fff7df;--soft-green:#eefcf3;--shadow:0 10px 30px rgba(56,112,177,.12)}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top left,#fff5cf 0,rgba(255,245,207,.7) 14%,transparent 38%),radial-gradient(circle at top right,#e7f4ff 0,rgba(231,244,255,.85) 18%,transparent 40%),linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text)}
+.app{max-width:1000px;margin:0 auto;padding:10px}
+.shell{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+.hero{padding:16px;background:linear-gradient(135deg,#fff6d9,#eef6ff 52%,#f9fbff);border-bottom:1px solid var(--line)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid #e7dca9;background:rgba(255,255,255,.7);font-size:13px;font-weight:700;color:#75531d}
+.hero h1{margin:8px 0 6px;font-size:28px;line-height:1.2;color:#1f4b7f}.hero p{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #dbe8f6;font-size:13px;font-weight:700;color:#375577}
+.info-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px;background:#fff;border-bottom:1px dashed var(--line)}
+.field{background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px 12px;box-shadow:0 4px 14px rgba(79,140,255,.04)}
+.field label{display:block;font-size:13px;font-weight:700;color:#4a6686;margin-bottom:6px}.field input{width:100%;border:none;outline:none;font-size:16px;color:var(--text);background:transparent}
+.reading-wrap{padding:16px;background:#fff;border-bottom:1px solid var(--line)}
+.reading-card{border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#fff,#fbfdff);padding:18px}
+.reading-title{font-size:22px;font-weight:900;color:#1f4b7f;margin:0 0 10px}
+.reading-sub{font-size:14px;color:#5f7891;font-weight:700;margin-bottom:12px}
+.reading-text{font-size:18px;line-height:1.55;white-space:pre-line}
+.toolbar{display:grid;grid-template-columns:1fr 180px;gap:12px;padding:12px 16px;align-items:center;background:#fbfdff;border-bottom:1px solid var(--line)}
+.progress-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px 12px}.progress-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.progress-title{font-size:14px;color:#58718c;font-weight:700}.progress-step{font-size:13px;color:#2f6fe4;font-weight:800}.progress{height:12px;background:#e7effa;border-radius:999px;overflow:hidden}
+.bar{width:8.3%;height:100%;border-radius:999px;background:linear-gradient(90deg,#67a2ff,#2f6fe4);transition:.3s ease}.jump{height:52px;border:1px solid var(--line);border-radius:18px;padding:0 14px;font-size:15px;background:#fff;outline:none;color:var(--text)}
+.viewport{overflow:hidden}.track{display:flex;width:100%;align-items:flex-start;transition:transform .35s ease}.slide{width:100%;min-width:100%;padding:14px 16px 12px}
+.question-card{background:linear-gradient(180deg,#fff,#fcfdff);border:1px solid var(--line);border-radius:26px;padding:16px;box-shadow:0 8px 22px rgba(79,140,255,.06);min-height:300px}
+.qhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.qnum{font-size:26px;font-weight:800;color:#1f4b7f}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;font-size:13px;font-weight:800;background:var(--soft-blue);color:#2f6fe4;border:1px solid #d8e8ff}
+.pill.orange{background:var(--soft-yellow);color:#946200;border-color:#f3e2a3}.pill.green{background:var(--soft-green);color:#11743a;border-color:#cbeed8}
+.stem{font-size:19px;line-height:1.6;margin:0 0 14px}
+.options{display:grid;gap:10px}.option{display:flex;gap:12px;align-items:flex-start;border:2px solid #dde8f5;border-radius:20px;background:#fff;padding:14px;cursor:pointer;transition:.18s ease;box-shadow:0 3px 10px rgba(79,140,255,.04)}
+.option:hover{border-color:#9ac0ff;background:#f7fbff;transform:translateY(-1px)}.option input{margin-top:3px;transform:scale(1.15);accent-color:var(--primary-dark)}.option-text{font-size:18px;line-height:1.5}.option-letter{font-weight:800;color:#2f6fe4;margin-right:4px}
+.answer-box{border:2px solid #dde8f5;border-radius:22px;background:#fff;padding:14px}
+.answer-input,.answer-textarea{width:100%;border:2px solid #dbe8f6;border-radius:16px;padding:12px 14px;font-size:18px;outline:none;background:#fff;color:var(--text)}
+.answer-input:focus,.answer-textarea:focus{border-color:#9ac0ff;box-shadow:0 0 0 4px rgba(79,140,255,.08)}
+.answer-textarea{min-height:130px;resize:vertical;line-height:1.55}
+.helper{font-size:14px;color:#6a7f95;margin-top:10px;line-height:1.5}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;padding:12px 16px 16px;border-top:1px solid var(--line);background:#fff;position:sticky;bottom:0;z-index:4}
+.nav-left,.nav-right{display:flex;gap:10px;align-items:center}.nav-right{justify-content:flex-end}.dots{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.dot{width:12px;height:12px;border-radius:50%;background:#d7e4f3;cursor:pointer;transition:.18s ease}.dot.active{background:#4f8cff;transform:scale(1.12);box-shadow:0 0 0 4px rgba(79,140,255,.12)}
+button{border:none;outline:none;cursor:pointer;font-size:16px;font-weight:800;padding:13px 18px;border-radius:18px;transition:.18s ease}.btn-ghost{background:#fff;color:#3c5b7c;border:2px solid #dde8f5}.btn-sub{background:#edf4ff;color:#2f6fe4;border:2px solid #d8e8ff}.btn-main{background:linear-gradient(180deg,#5f98ff,#2f6fe4);color:#fff;box-shadow:0 10px 18px rgba(47,111,228,.22)}.btn-disabled{opacity:.7;cursor:not-allowed}
+.result{display:none;margin:0 16px 16px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#fff,#fbfdff);overflow:hidden;box-shadow:0 8px 20px rgba(79,140,255,.06)}
+.result-head{padding:16px;background:linear-gradient(135deg,#edf5ff,#fff7df);border-bottom:1px solid var(--line)}.score{font-size:28px;font-weight:900;color:#1f4b7f}.student-line{margin-top:8px;font-size:15px;color:#55708b;line-height:1.5}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px;border-bottom:1px solid var(--line)}.summary-card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff;text-align:center}
+.summary-card .label{font-size:13px;font-weight:700;color:#667f98;margin-bottom:6px}.summary-card .value{font-size:24px;font-weight:900;color:#1f4b7f}.summary-card.good{background:#f4fff8;border-color:#c8edd6}.summary-card.bad{background:#fff5f5;border-color:#f1d0d0}
+.review{display:grid;gap:10px;padding:16px}.review-item{border:1px solid var(--line);border-radius:18px;padding:12px 14px;background:#fff}.review-title{font-size:16px;font-weight:800;margin-bottom:6px}.ok{color:var(--success)}.bad{color:var(--danger)}.review-text{font-size:14px;line-height:1.5;color:#4e657c;word-break:break-word}
+.status{display:none;margin:0 16px 16px;padding:14px 16px;border-radius:18px;font-size:15px;font-weight:700;line-height:1.45}.status.sending{display:block;background:#eef5ff;border:1px solid #cfe0ff;color:#285892}.status.success{display:block;background:#effcf4;border:1px solid #c8edd6;color:#166534}.status.error{display:block;background:#fff1f2;border:1px solid #f4c4ca;color:#b42318}
+@media (max-width:760px){.app{padding:4px}.hero h1{font-size:24px}.info-wrap,.toolbar{grid-template-columns:1fr;padding:12px}.slide{padding:12px}.stem,.option-text,.reading-text{font-size:17px}.nav{grid-template-columns:1fr;padding:12px}.nav-left,.nav-right{justify-content:center;flex-wrap:wrap}.summary-grid{grid-template-columns:1fr}.question-card{min-height:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="shell">
+<div class="hero">
+<div class="hero-badge">📖 Tiếng Việt 3 - Đọc hiểu</div>
+<h1>Tiếng Việt lớp 3 - Ôn tập cuối năm</h1>
+<p>Bài đọc được hiển thị cố định ở đầu. Câu trắc nghiệm tự chấm, câu trả lời ngắn sẽ gửi về Google Sheet để giáo viên xem.</p>
+<div class="chips"><div class="chip">📚 Bài đọc cố định ở đầu</div><div class="chip">📝 8 câu trắc nghiệm</div><div class="chip">✍️ 4 câu trả lời ngắn gửi về Sheet</div></div>
+</div>
+
+<div class="info-wrap">
+<div class="field"><label for="studentName">👦👧 Họ và tên</label><input id="studentName" type="text" placeholder="Nhập họ và tên của em" /></div>
+<div class="field"><label for="studentClass">🏫 Lớp</label><input id="studentClass" type="text" placeholder="Ví dụ: 3A" /></div>
+</div>
+
+<div class="reading-wrap">
+  <div class="reading-card">
+    <div class="reading-title">Chuyện của ông Biển</div>
+    <div class="reading-sub">Em đọc kĩ bài sau rồi trả lời câu hỏi.</div>
+    <div class="reading-text">Ông Biển không nhớ mình đã bao nhiêu tuổi. Chỉ biết rằng từ lúc khai thiên lập địa đã có ông rồi. Già như vậy nhưng suốt ngày đêm ông vẫn rì rầm kể chuyện không biết mệt. Ông thổi gió mát vào đất liền, đưa hơi nước lên trời làm mưa và mang đến cho con người bao nhiêu là sản vật.
+Nhưng mấy chục năm nay, ông thấy yếu đi nhiều. Bởi vì mỗi năm con người thải xuống biển hơn sáu triệu tấn rác. Tôm cá cứ chết dần. Ông Biển đành lên đường tìm người giúp đỡ.
+Đi mãi, đi mãi, gặp một hòn đảo nhỏ, ông nói:
+- Cháu nhận giúp ông một ít rác nhé!
+Đảo nhỏ lắc đầu:
+- Nhận rác của ông thì cháu biết để đâu!
+Hướng về đất liền, ông thấy một bãi cát. Gió đang lùa rác từ bãi cát xuống biển, rồi sóng biển lại đưa rác lên bờ. “Không thể loanh quanh mãi thế này!” – Ông Biển thở dài.
+Đang tuyệt vọng, ông Biển bỗng thấy trên bãi cát mấy cô bé, cậu bé mang theo những chiếc bao to nhặt rác. “Cứu tinh đây rồi!” – Ông reo lên và tặng các cô cậu những làn gió mát nhất.
+Ông thầm mơ: Con người sẽ không xả rác xuống biển nữa. Chẳng bao lâu, nước biển sẽ lại trong xanh, các loài sinh vật sẽ tiếp tục sinh sôi nảy nở, biển sẽ lại vui như xưa.</div>
+  </div>
+</div>
+
+<div class="toolbar">
+<div class="progress-card"><div class="progress-head"><div class="progress-title">Tiến độ làm bài</div><div class="progress-step" id="progressText">Câu 1 / 12</div></div><div class="progress"><div class="bar" id="bar"></div></div></div>
+<select class="jump" id="jumpSelect">
+<option value="0">📌 Chuyển nhanh đến câu...</option>
+<option value="0">Câu 1</option><option value="1">Câu 2</option><option value="2">Câu 3</option><option value="3">Câu 4</option>
+<option value="4">Câu 5</option><option value="5">Câu 6</option><option value="6">Câu 7</option><option value="7">Câu 8</option>
+<option value="8">Câu 9</option><option value="9">Câu 10</option><option value="10">Câu 11</option><option value="11">Câu 12</option>
+</select>
+</div>
+
+<div class="viewport"><div class="track" id="track">
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 1</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Ông Biển mang lại điều gì cho con người?</p><div class="options">
+<label class="option"><input type="radio" name="q1" value="A"><div class="option-text"><span class="option-letter">A.</span>Gió mát, mưa và sản vật</div></label>
+<label class="option"><input type="radio" name="q1" value="B"><div class="option-text"><span class="option-letter">B.</span>Núi cao và rừng xanh</div></label>
+<label class="option"><input type="radio" name="q1" value="C"><div class="option-text"><span class="option-letter">C.</span>Nhà cửa và đường sá</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 2</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Điều gì xảy ra khiến ông Biển phải đi tìm người giúp đỡ?</p><div class="options">
+<label class="option"><input type="radio" name="q2" value="A"><div class="option-text"><span class="option-letter">A.</span>Mỗi năm con người thải xuống biển hơn năm triệu tấn rác làm tôm cá chết dần.</div></label>
+<label class="option"><input type="radio" name="q2" value="B"><div class="option-text"><span class="option-letter">B.</span>Mỗi năm con người thải xuống biển hơn sáu triệu tấn rác làm tôm cá chết dần.</div></label>
+<label class="option"><input type="radio" name="q2" value="C"><div class="option-text"><span class="option-letter">C.</span>Mỗi năm con người thải xuống biển hơn bảy triệu tấn rác làm tôm cá chết dần.</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 3</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Ông Biển đã nhờ ai giúp đỡ đầu tiên?</p><div class="options">
+<label class="option"><input type="radio" name="q3" value="A"><div class="option-text"><span class="option-letter">A.</span>Một thành phố lớn</div></label>
+<label class="option"><input type="radio" name="q3" value="B"><div class="option-text"><span class="option-letter">B.</span>Một hòn đảo nhỏ</div></label>
+<label class="option"><input type="radio" name="q3" value="C"><div class="option-text"><span class="option-letter">C.</span>Một con sông</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 4</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Những ai đã giúp ông Biển nhặt rác?</p><div class="options">
+<label class="option"><input type="radio" name="q4" value="A"><div class="option-text"><span class="option-letter">A.</span>Những người lớn sống ven biển</div></label>
+<label class="option"><input type="radio" name="q4" value="B"><div class="option-text"><span class="option-letter">B.</span>Những người đánh bắt cá ở biển</div></label>
+<label class="option"><input type="radio" name="q4" value="C"><div class="option-text"><span class="option-letter">C.</span>Mấy cô bé, cậu bé mang theo chiếc bao to nhặt rác</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 5</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Vì sao hòn đảo nhỏ không nhận rác giúp ông Biển?</p><div class="options">
+<label class="option"><input type="radio" name="q5" value="A"><div class="option-text"><span class="option-letter">A.</span>Vì đảo không thích giúp đỡ</div></label>
+<label class="option"><input type="radio" name="q5" value="B"><div class="option-text"><span class="option-letter">B.</span>Vì đảo không biết để rác ở đâu</div></label>
+<label class="option"><input type="radio" name="q5" value="C"><div class="option-text"><span class="option-letter">C.</span>Vì đảo không nghe thấy lời ông Biển</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 6</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Hình ảnh gió thổi rác từ bãi cát xuống biển rồi sóng lại đưa rác lên bờ cho thấy điều gì?</p><div class="options">
+<label class="option"><input type="radio" name="q6" value="A"><div class="option-text"><span class="option-letter">A.</span>Rác được xử lí sạch sẽ mỗi ngày</div></label>
+<label class="option"><input type="radio" name="q6" value="B"><div class="option-text"><span class="option-letter">B.</span>Rác di chuyển qua lại, không được giải quyết</div></label>
+<label class="option"><input type="radio" name="q6" value="C"><div class="option-text"><span class="option-letter">C.</span>Biển rất sạch</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 7</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Câu nói: “Không thể loanh quanh mãi thế này!” thể hiện điều gì?</p><div class="options">
+<label class="option"><input type="radio" name="q7" value="A"><div class="option-text"><span class="option-letter">A.</span>Ông Biển vui vẻ vì cuộc sống ở biển</div></label>
+<label class="option"><input type="radio" name="q7" value="B"><div class="option-text"><span class="option-letter">B.</span>Ông Biển tức giận vì không thể xử lí rác</div></label>
+<label class="option"><input type="radio" name="q7" value="C"><div class="option-text"><span class="option-letter">C.</span>Ông Biển lo lắng, sốt ruột vì tình trạng rác</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 8</div><div class="pill">0,5 điểm</div><div class="pill green">Trả lời ngắn</div></div><p class="stem">Qua câu chuyện, em hiểu điều gì là quan trọng nhất để giúp biển sạch trở lại?</p><div class="answer-box"><textarea id="q8" class="answer-textarea" placeholder="Em viết câu trả lời của mình ở đây"></textarea><div class="helper">Câu này không tự chấm điểm, giáo viên sẽ đọc câu trả lời của em trong Google Sheet.</div></div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 9</div><div class="pill">0,5 điểm</div><div class="pill orange">Trắc nghiệm</div></div><p class="stem">Từ nào có nghĩa giống với từ “yếu đi” trong bài?</p><div class="options">
+<label class="option"><input type="radio" name="q9" value="A"><div class="option-text"><span class="option-letter">A.</span>Mạnh lên</div></label>
+<label class="option"><input type="radio" name="q9" value="B"><div class="option-text"><span class="option-letter">B.</span>Suy yếu</div></label>
+<label class="option"><input type="radio" name="q9" value="C"><div class="option-text"><span class="option-letter">C.</span>Vui vẻ</div></label>
+</div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 10</div><div class="pill">0,5 điểm</div><div class="pill green">Trả lời ngắn</div></div><p class="stem">Viết lại câu sau cho đúng bằng cách thêm dấu ngoặc kép: Ông Biển nói cháu nhận giúp ông một ít rác nhé</p><div class="answer-box"><textarea id="q10" class="answer-textarea" placeholder='Em viết lại câu ở đây'></textarea><div class="helper">Ví dụ đúng mẫu: Ông Biển nói: “...”</div></div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 11</div><div class="pill">0,5 điểm</div><div class="pill green">Trả lời ngắn</div></div><p class="stem">Đặt và trả lời cho câu hỏi “khi nào?” về hoạt động nhặt rác.</p><div class="answer-box"><textarea id="q11" class="answer-textarea" placeholder="Ví dụ:
+Câu hỏi: ...
+Trả lời: ..."></textarea><div class="helper">Em viết cả câu hỏi và câu trả lời vào ô này.</div></div></div></section>
+
+<section class="slide"><div class="question-card"><div class="qhead"><div class="qnum">Câu 12</div><div class="pill">0,5 điểm</div><div class="pill green">Trả lời ngắn</div></div><p class="stem">Tìm trong bài một câu cảm bộc lộ cảm xúc vui mừng của ông Biển.</p><div class="answer-box"><textarea id="q12" class="answer-textarea" placeholder="Em viết câu tìm được ở đây"></textarea><div class="helper">Câu này không tự chấm điểm, giáo viên sẽ xem câu trả lời của em.</div></div></div></section>
+
+</div></div>
+
+<div class="nav">
+<div class="nav-left"><button type="button" class="btn-ghost" id="prevBtn">← Câu trước</button><button type="button" class="btn-sub" id="nextBtn">Câu sau →</button></div>
+<div class="dots" id="dots"></div>
+<div class="nav-right"><button type="button" class="btn-ghost" id="resetBtn">Làm lại</button><button type="button" class="btn-main" id="submitBtn">Nộp bài</button></div>
+</div>
+
+<div class="result" id="resultBox"></div>
+<div class="status" id="statusBox"></div>
+</div></div>
+
+<script>
+(function(){
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwD6O6AHbHkSdss-NErEjF4SkkixnbVkI_VouLWtfCQi-8cB4yG2TDTh5G8hcRwR4WQ/exec";
+const totalSlides = 12;
+const answers = {q1:"A",q2:"B",q3:"B",q4:"C",q5:"B",q6:"B",q7:"C",q9:"B"};
+let current=0,isSending=false;
+const track=document.getElementById('track'),progressText=document.getElementById('progressText'),bar=document.getElementById('bar'),jumpSelect=document.getElementById('jumpSelect'),dotsBox=document.getElementById('dots'),resultBox=document.getElementById('resultBox'),statusBox=document.getElementById('statusBox');
+
+for(let i=0;i<totalSlides;i++){const dot=document.createElement('div');dot.className='dot'+(i===0?' active':'');dot.addEventListener('click',()=>goTo(i));dotsBox.appendChild(dot);}
+function updateSlider(){track.style.transform='translateX(-'+(current*100)+'%)';progressText.textContent='Câu '+(current+1)+' / '+totalSlides;bar.style.width=(((current+1)/totalSlides)*100)+'%';jumpSelect.value=String(current);document.querySelectorAll('.dot').forEach((dot,idx)=>dot.classList.toggle('active',idx===current));}
+function goTo(i){current=Math.max(0,Math.min(totalSlides-1,i));updateSlider();}
+function setStatus(type,text){statusBox.className='status '+type;statusBox.textContent=text;}
+function clearStatus(){statusBox.className='status';statusBox.textContent='';}
+function getRadioValue(name){const checked=document.querySelector('input[name="'+name+'"]:checked');return checked?checked.value:'';}
+
+function calcResult(){
+let correctCount=0; const review=[];
+['q1','q2','q3','q4','q5','q6','q7','q9'].forEach(key=>{
+  const labels={q1:'Câu 1',q2:'Câu 2',q3:'Câu 3',q4:'Câu 4',q5:'Câu 5',q6:'Câu 6',q7:'Câu 7',q9:'Câu 9'};
+  const user=getRadioValue(key), ok=user===answers[key];
+  if(ok) correctCount += 1;
+  review.push({label:labels[key],ok:ok,user:user||'Chưa chọn',right:answers[key]});
+});
+return {score:correctCount*0.5,correctCount:correctCount,wrongCount:8-correctCount,review:review};
+}
+
+function renderResult(studentName,studentClass,result){
+resultBox.innerHTML=`<div class="result-head"><div class="score">🎉 Điểm trắc nghiệm của em: ${result.score.toFixed(1)} / 4.0</div><div class="student-line"><strong>Họ và tên:</strong> ${studentName} &nbsp; | &nbsp; <strong>Lớp:</strong> ${studentClass}</div></div><div class="summary-grid"><div class="summary-card"><div class="label">Số câu trắc nghiệm</div><div class="value">8</div></div><div class="summary-card good"><div class="label">Số câu đúng</div><div class="value">${result.correctCount}</div></div><div class="summary-card bad"><div class="label">Số câu sai</div><div class="value">${result.wrongCount}</div></div></div><div class="review">${result.review.map(item=>`<div class="review-item"><div class="review-title ${item.ok?'ok':'bad'}">${item.label}: ${item.ok?'Đúng':'Sai'}</div><div class="review-text">Bài làm: ${item.user}</div><div class="review-text">Đáp án đúng: ${item.right}</div></div>`).join('')}</div>`;
+resultBox.style.display='block';resultBox.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function sendResult(payload){
+return new Promise(resolve=>{try{fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)}).then(()=>resolve({success:true})).catch(()=>resolve({success:true}));}catch(err){resolve({success:false,error:String(err)});}});
+}
+
+document.getElementById('prevBtn').addEventListener('click',()=>goTo(current-1));
+document.getElementById('nextBtn').addEventListener('click',()=>goTo(current+1));
+document.getElementById('jumpSelect').addEventListener('change',()=>goTo(Number(jumpSelect.value)));
+document.getElementById('resetBtn').addEventListener('click',()=>{
+document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
+['q8','q10','q11','q12'].forEach(id=>document.getElementById(id).value='');
+document.getElementById('studentName').value='';document.getElementById('studentClass').value='';
+clearStatus();resultBox.style.display='none';resultBox.innerHTML='';goTo(0);
+});
+
+document.getElementById('submitBtn').addEventListener('click',async()=>{
+if(isSending) return;
+const studentName=document.getElementById('studentName').value.trim(),studentClass=document.getElementById('studentClass').value.trim();
+if(!studentName){alert('Em hãy nhập họ và tên trước khi nộp bài.');document.getElementById('studentName').focus();return;}
+if(!studentClass){alert('Em hãy nhập lớp trước khi nộp bài.');document.getElementById('studentClass').focus();return;}
+
+const result=calcResult();
+renderResult(studentName,studentClass,result);
+
+const shortAnswers = [
+  'Câu 8: ' + (document.getElementById('q8').value.trim() || ''),
+  'Câu 10: ' + (document.getElementById('q10').value.trim() || ''),
+  'Câu 11: ' + (document.getElementById('q11').value.trim() || ''),
+  'Câu 12: ' + (document.getElementById('q12').value.trim() || '')
+].join(' || ');
+
+const payload={mon:'Tiếng Việt',hoTen:studentName,lop:studentClass,diemTracNghiem:result.score.toFixed(1),soCauDung:String(result.correctCount),soCauSai:String(result.wrongCount),cauTraLoiNgan:shortAnswers,de:'Tiếng Việt 3 - Đọc hiểu cuối năm 3.2'};
+
+isSending=true;document.getElementById('submitBtn').classList.add('btn-disabled');setStatus('sending','Đang gửi kết quả về giáo viên...');
+try{const send=await sendResult(payload);if(send&&send.success)setStatus('success','Đã gửi kết quả về Google Sheet.');else setStatus('error','Đã chấm điểm nhưng gửi về Google Sheet chưa thành công.');}catch(err){setStatus('error','Đã chấm điểm nhưng gửi về Google Sheet bị lỗi.');}finally{isSending=false;document.getElementById('submitBtn').classList.remove('btn-disabled');}
+});
+
+let startX=0,deltaX=0;const viewport=document.querySelector('.viewport');
+viewport.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;deltaX=0;},{passive:true});
+viewport.addEventListener('touchmove',e=>{deltaX=e.touches[0].clientX-startX;},{passive:true});
+viewport.addEventListener('touchend',()=>{if(Math.abs(deltaX)>50){if(deltaX<0)goTo(current+1);else goTo(current-1);}});
+goTo(0);
+})();
+</script>
+</body>
+</html>
